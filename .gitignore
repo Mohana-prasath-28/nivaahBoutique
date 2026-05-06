@@ -1,0 +1,24 @@
+# Dependencies (npm workspaces hoist to repo root)
+node_modules/
+
+# Logs & debug
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# OS
+.DS_Store
+
+# Env files (keep .env.example if you use one)
+.env
+.env.local
+.env.*.local
+
+# TypeScript
+*.tsbuildinfo
+
+# Tooling / IDE (optional; remove if your team commits these)
+.idea/
+.vscode/

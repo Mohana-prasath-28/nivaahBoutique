@@ -1,0 +1,18 @@
+{
+  "name": "nivaahboutique-monorepo",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:mobile": "npm --workspace nivaahboutique run start",
+    "dev:web": "npm --workspace web run dev",
+    "android": "npm --workspace nivaahboutique run android",
+    "ios": "npm --workspace nivaahboutique run ios",
+    "typecheck": "npm --workspace nivaahboutique run typecheck && npm --workspace web run typecheck && npm --workspace @nivaah/shared run typecheck"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.3"
+  }
+}
