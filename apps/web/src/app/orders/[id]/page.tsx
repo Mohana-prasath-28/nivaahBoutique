@@ -11,8 +11,13 @@ import { formatCurrencyINR, formatDateIndia } from "@/constants/formatters";
 const timeline = ["Ordered", "Packed", "Shipped", "Out for Delivery", "Delivered"] as const;
 type TimelineStatus = (typeof timeline)[number];
 
-export default function OrderDetailsPage({ params }: { params: { id: string } }) {
-  const order = mockOrders.find((o) => o.id === params.id);
+export default async function OrderDetailsPage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params;
+  const order = mockOrders.find((o) => o.id === id);
   if (!order) return notFound();
 
   const canReviewOrReturn = order.status === "Delivered";
